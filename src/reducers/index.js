@@ -1,5 +1,5 @@
 import { combineReducers } from 'redux'
-import { tableReducer } from './table'
+import { tableReducer } from './tableReducer'
 
 export const rootReducer = combineReducers({
   table: tableReducer,

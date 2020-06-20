@@ -5,18 +5,22 @@ export default class ItemAddForm extends Component {
 
   state = {
     name: '',
-    eur: '',
-    pln: ''
+    eur: ''
   };
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, eur,pln} = this.state;
+    const { name, eur} = this.state;
     if (name && eur) {
-      this.setState({ name: '', eur: ''});
-      this.props.onItemAdded(name, eur,pln);
+      console.log('eur: ', typeof eur);
+      if (!isNaN(+eur)) {
+        this.setState({ name: '', eur: '' });
+        this.props.onItemAdded(name, +eur);
+      } else {
+        alert('Please enter a number');
+      }
     } else {
-      alert('Proszę wypełnić wszystkie pola');
+      alert('Please fill in all fields');
     }
   };
 
@@ -41,7 +45,7 @@ export default class ItemAddForm extends Component {
           value={this.state.name}
           onChange={this.onNameChange}
           placeholder="name" />
-        <input type="number"
+        <input type="text"
           className="form-control new-table"
           value={this.state.eur}
           onChange={this.onEurChange}

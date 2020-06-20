@@ -1,11 +1,10 @@
 import React from 'react';
 import './table-list-item.css';
 
-const TableListItem = ({ name, eur }) => {
-
+const TableListItem = ({ name, eur, pln }) => {
   return (
     <div className="table-list-item">
-      {name}{eur}
+      {name}{eur}{pln}
     </div>
   );
 };
