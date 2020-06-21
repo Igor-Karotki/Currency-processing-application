@@ -10,9 +10,8 @@ export default class ItemAddForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, eur} = this.state;
+    const { name, eur } = this.state;
     if (name && eur) {
-      console.log('eur: ', typeof eur);
       if (!isNaN(+eur)) {
         this.setState({ name: '', eur: '' });
         this.props.onItemAdded(name, +eur);

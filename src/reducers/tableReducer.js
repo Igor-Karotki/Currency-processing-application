@@ -1,4 +1,4 @@
-let maxId = 999;
+let initialId = 1;
 
 const initialState = {
   items: [],
@@ -17,11 +17,10 @@ export function tableReducer(state = initialState, action) {
       return { ...state, items: items }
     case 'ADD_ITEM':
       const { name, eur } = action.payload;
-      console.log('state.currencyRate: ', state.currencyRate);
       const item = createItem(name, eur);
       return { ...state, items: [...state.items, item] }
     case 'CHANGE_CURRENCYRATE':
-      return { ...state, currencyRate: action.payload }
+      return { ...state, currencyRate: +action.payload }
     default:
       return state
   }
@@ -29,9 +28,9 @@ export function tableReducer(state = initialState, action) {
 
 function createItem(name, eur) {
   return {
-    id: ++maxId,
+    id: ++initialId,
     name,
-    eur
+    eur: Math.round(eur * 100) / 100
   };
 };
 

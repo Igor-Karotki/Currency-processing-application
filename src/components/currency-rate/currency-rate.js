@@ -3,7 +3,7 @@ export default class CurrencyRate extends Component {
 
   state = {
     currencyRate: '',
-    currentCurrencyRate: '4,45'
+    currentCurrencyRate: '4.45'
   };
 
   onRateChange = (e) => {
@@ -16,9 +16,12 @@ export default class CurrencyRate extends Component {
     e.preventDefault();
     const { currencyRate } = this.state;
     if (currencyRate) {
-      this.props.currencyRate(currencyRate);
-      this.setState({currentCurrencyRate:currencyRate, currencyRate: '' });
-
+      if (!isNaN(+currencyRate)) {
+        this.props.currencyRate(currencyRate);
+        this.setState({currentCurrencyRate:currencyRate, currencyRate: '' });
+      } else {
+        alert('Please enter a number or replace the comma after the number with a dot(99.99)');
+      }
     } else {
       alert('Please enter Currency Rate');
     }

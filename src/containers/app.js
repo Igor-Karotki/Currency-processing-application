@@ -9,7 +9,6 @@ import Table from '../components/table/table';
 import CurrencyRate from '../components/currency-rate/currency-rate';
 import ItemAddForm from '../components/item-add-form/item-add-form';
 import TopTransactions from '../components/topTransactions/topTransactions';
-import Sum from '../components/sum/sum';
 import './app.css';
 
 class App extends Component {
@@ -21,7 +20,6 @@ class App extends Component {
         <Table currencyRate={currencyRate} onDelete={deleteItem} items={items} />
         <ItemAddForm onItemAdded={addItem} />
         <TopTransactions currencyRate={currencyRate} items={items} />
-        <Sum currencyRate={currencyRate} items={items} />
       </div>
     );
   };
@@ -38,7 +36,7 @@ const mapDispatchToProps = dispatch => {
   return {
     addItem: (name, eur) => dispatch(addItem(name, eur)),
     deleteItem: (id) => dispatch(deleteItem(id)),
-    changeCurrencyRate: (currencyRate) => dispatch(changeCurrencyRate(+currencyRate)),
+    changeCurrencyRate: (currencyRate) => dispatch(changeCurrencyRate(currencyRate)),
   }
 }
 

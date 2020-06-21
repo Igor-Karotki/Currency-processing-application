@@ -20,20 +20,18 @@ const topTransactions = ({ items, currencyRate }) => {
   }, 0);
 
   const duplicates = items.filter(item => item.eur === max.eur);
-  console.log('duplicates: ', duplicates);
 
   const elements = duplicates.map((item) => {
     const { id, name, eur } = item;
-    const roundedEur = Math.floor(eur * 100) / 100;
-    const pln = Math.floor(eur * currencyRate * 100) / 100;
+    const pln = eur * currencyRate;
     return (
       <tr key={id}>
         <td key={1}><TableListItem
           name={name} /></td>
         <td key={2}><TableListItem
-          eur={roundedEur} /></td>
+          eur={eur.toFixed(2)} /></td>
         <td key={3}><TableListItem
-          eur={pln} /></td>
+          eur={pln.toFixed(2)} /></td>
       </tr>
     );
   });
