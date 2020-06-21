@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import './currency-rate.scss';
 export default class CurrencyRate extends Component {
 
   state = {
@@ -29,16 +30,16 @@ export default class CurrencyRate extends Component {
   render() {
     return (
       <form
-        className="bottom-panel d-flex"
+        className="currency-rate"
         onSubmit={this.onSubmit}>
-        <p>1 EUR={this.state.currentCurrencyRate} PLN</p>
+        <p >1 EUR = {this.state.currentCurrencyRate} PLN</p>
         <input type="text"
           className="form-control new-table"
           value={this.state.currencyRate}
           onChange={this.onRateChange}
           placeholder="PLN" />
         <button type="submit"
-          className="btn btn-outline-secondary">Add</button>
+          className="btn btnCurrency">Сhange</button>
       </form>
     );
   }

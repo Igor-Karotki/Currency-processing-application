@@ -1,0 +1,19 @@
+.currency-rate {
+ margin-bottom: 20px;
+ display: flex;
+
+ p {
+  margin: auto;
+  margin-right: 5px;
+ }
+
+ .btnCurrency {
+  border: 2px solid #009879;
+  color: #009879;
+  margin-left: 5px;
+
+  &:hover {
+   box-shadow: 0 0 40px 40px #00a887 inset;
+  }
+ }
+}

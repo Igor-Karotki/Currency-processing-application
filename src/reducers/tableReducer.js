@@ -3,7 +3,7 @@ let initialId = 1;
 const initialState = {
   items: [],
   currencyRate: 4.45,
-}
+};
 
 export function tableReducer(state = initialState, action) {
   switch (action.type) {
@@ -23,8 +23,8 @@ export function tableReducer(state = initialState, action) {
       return { ...state, currencyRate: +action.payload }
     default:
       return state
-  }
-}
+  };
+};
 
 function createItem(name, eur) {
   return {

@@ -1,10 +1,10 @@
 import React from 'react';
-import './table-list-item.css';
+import './table-list-item.scss';
 
-const TableListItem = ({ name, eur, pln }) => {
+const TableListItem = ({ id, name, eur, pln }) => {
   return (
     <div className="table-list-item">
-      {name}{eur}{pln}
+      {id}{name}{eur}{pln}
     </div>
   );
 };

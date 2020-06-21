@@ -1,0 +1,20 @@
+.add-form {
+  margin-top:10px;
+  display: flex;
+  p {
+   margin: auto;
+  }
+  input{
+    width: 20%;
+    margin-right: 5px;
+  }
+  .btnAddForm {
+   border: 2px solid #009879;
+   color: #009879;
+   margin-left: 5px;
+ 
+   &:hover {
+    box-shadow: 0 0 40px 40px #00a887 inset;
+   }
+  }
+}

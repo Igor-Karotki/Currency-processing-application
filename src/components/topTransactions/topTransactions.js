@@ -1,6 +1,6 @@
 import React from 'react';
 import TableListItem from '../table-list-item/table-list-item';
-import './topTransactions.css';
+import './topTransactions.scss';
 
 const topTransactions = ({ items, currencyRate }) => {
   const head = (
@@ -37,7 +37,7 @@ const topTransactions = ({ items, currencyRate }) => {
   });
 
   return (
-    <div className="table-responsive">
+    <div className="table-responsive table-right">
       <p className="topTransactionsHeader">Top transactions</p>
       <table className="table table-bordered">
         {head}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './item-add-form.css';
+import './item-add-form.scss';
 
 export default class ItemAddForm extends Component {
 
@@ -37,7 +37,7 @@ export default class ItemAddForm extends Component {
   render() {
     return (
       <form
-        className="bottom-panel d-flex"
+        className="add-form"
         onSubmit={this.onSubmit}>
         <input type="text"
           className="form-control new-table"
@@ -50,7 +50,7 @@ export default class ItemAddForm extends Component {
           onChange={this.onEurChange}
           placeholder="eur" />
         <button type="submit"
-          className="btn btn-outline-secondary">Submit</button>
+          className="btn btnAddForm">Submit</button>
       </form>
     );
   }

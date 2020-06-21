@@ -9,17 +9,19 @@ import Table from '../components/table/table';
 import CurrencyRate from '../components/currency-rate/currency-rate';
 import ItemAddForm from '../components/item-add-form/item-add-form';
 import TopTransactions from '../components/topTransactions/topTransactions';
-import './app.css';
+import './app.scss';
 
 class App extends Component {
   render() {
     const { items, addItem, deleteItem, changeCurrencyRate, currencyRate } = this.props;
     return (
-      <div className="marg">
+      <div className="app">
         <CurrencyRate currencyRate={changeCurrencyRate} />
-        <Table currencyRate={currencyRate} onDelete={deleteItem} items={items} />
+        <div className="flexTable">
+          <Table currencyRate={currencyRate} onDelete={deleteItem} items={items} />
+          <TopTransactions currencyRate={currencyRate} items={items} />
+        </div>
         <ItemAddForm onItemAdded={addItem} />
-        <TopTransactions currencyRate={currencyRate} items={items} />
       </div>
     );
   };
