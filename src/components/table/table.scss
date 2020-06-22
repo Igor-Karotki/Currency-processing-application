@@ -5,6 +5,7 @@
 .btnDelete {
   border: 2px solid #da6969;
   color: #da6969;
+  margin: auto;
 
   &:hover {
     box-shadow: 0 0 40px 40px #ff3737 inset;
@@ -26,10 +27,6 @@
   overflow: auto;
   box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
 
-  @media (max-width: 576px) {
-    display: block;
-  }
-
   & thead tr {
     background-color: #009879;
     color: #ffffff;
@@ -43,10 +40,6 @@
     &.active-row {
       font-weight: bold;
       color: #009879;
-    }
-
-    button {
-      width: 100%;
     }
   }
 

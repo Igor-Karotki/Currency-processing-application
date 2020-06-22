@@ -6,6 +6,10 @@
   @media (max-width: 1200px) {
     margin: 5%;
   }
+
+  @media (max-width: 576px) {
+    margin: 10px;
+  }
 }
 
 body {
@@ -40,7 +44,6 @@ p {
 
 .form-control {
   padding: .375rem .75rem;
-  font-size: 1rem;
   line-height: 1.5;
   color: #495057;
   background-color: #fff;
@@ -54,6 +57,10 @@ optgroup,
 select,
 textarea {
   font-family: inherit;
+}
+
+form {
+  font-size: 0.7em;
 }
 
 .btn {
@@ -80,11 +87,19 @@ textarea {
   }
 }
 
+table {
+  table-layout: fixed;
+}
+
 .flexTable {
   display: flex;
   width: 100%;
 
   @media (max-width: 1200px) {
     flex-direction: column;
+  }
+
+  @media (max-width: 576px) {
+    width: 99%;
   }
 }
