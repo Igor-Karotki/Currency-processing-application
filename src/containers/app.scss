@@ -29,7 +29,6 @@ p {
 
 thead {
   th {
-
     &:nth-child(2),
     &:nth-child(3) {
       text-align: end;
@@ -60,7 +59,9 @@ textarea {
 }
 
 form {
-  font-size: 0.7em;
+  @media (max-width: 576px) {
+    font-size: 0.7em;
+  }
 }
 
 .btn {
