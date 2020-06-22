@@ -1,11 +1,9 @@
-
 export function addItem(name, eur) {
   return {
     type: 'ADD_ITEM',
-    payload: 
-    {
-      'name' : name,
-      'eur' : eur,
+    payload: {
+      'name': name,
+      'eur': eur,
     },
   }
 }
@@ -21,4 +19,3 @@ export function changeCurrencyRate(currencyRate) {
     payload: currencyRate,
   }
 }
-

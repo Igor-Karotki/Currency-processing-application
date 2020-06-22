@@ -4,6 +4,10 @@
   width: 49%;
   justify-content: space-between;
 
+  @media (max-width: 992px) {
+    width: 100%;
+  }
+
   p {
     margin: auto;
   }

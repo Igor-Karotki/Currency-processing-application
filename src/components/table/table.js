@@ -41,7 +41,7 @@ const Table = ({ items, onDelete, currencyRate }) => {
   const sum = (
     <tr className="sum" key={1}>
       <td>
-      <div className="table-list-item">Total</div>
+        <div className="table-list-item">Total</div>
       </td>
       <td>
         <div className="table-list-item">{eurSum.toFixed(2)}</div>
