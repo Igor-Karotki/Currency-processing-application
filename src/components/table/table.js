@@ -18,7 +18,7 @@ const Table = ({ items, onDelete, currencyRate }) => {
 
   const elements = items.map((item) => {
     const { id, name, eur } = item;
-    const pln = eur * currencyRate;
+    const pln = Math.round(eur * currencyRate * 100) / 100;
     eurSum = eurSum + eur;
     plnSum = plnSum + pln;
     return (
@@ -37,15 +37,17 @@ const Table = ({ items, onDelete, currencyRate }) => {
       </tr>
     );
   });
+
   const sum = (
     <tr className="sum" key={1}>
       <td>
+      <div className="table-list-item">Total</div>
       </td>
       <td>
-        <div className="table-list-item">Total EUR = {eurSum.toFixed(2)}</div>
+        <div className="table-list-item">{eurSum.toFixed(2)}</div>
       </td>
       <td>
-        <div className="table-list-item">Total PLN = {plnSum.toFixed(2)}</div>
+        <div className="table-list-item">{plnSum.toFixed(2)}</div>
       </td>
       <td>
       </td>

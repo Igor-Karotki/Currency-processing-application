@@ -15,9 +15,18 @@ body {
   background-color: #fff;
 }
 
-div,
-th {
+p {
   text-align: center;
+}
+
+thead {
+  th {
+
+    &:nth-child(2),
+    &:nth-child(3) {
+      text-align: end;
+    }
+  }
 }
 
 p {
@@ -26,7 +35,6 @@ p {
 }
 
 .form-control {
-  display: block;
   padding: .375rem .75rem;
   font-size: 1rem;
   line-height: 1.5;
@@ -35,23 +43,18 @@ p {
   background-clip: padding-box;
   border: 1px solid #ced4da;
   border-radius: .25rem;
-  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
 }
 
 input,
 optgroup,
 select,
 textarea {
-  margin: 0;
   font-family: inherit;
-  font-size: inherit;
-  line-height: inherit;
 }
-
 
 .btn {
   background-color: transparent;
-  border-radius: 0.6em;
+  border-radius: 0.4em;
   cursor: pointer;
   display: flex;
   padding: 0.5em 0.8em;
@@ -63,8 +66,9 @@ textarea {
   &:focus {
     outline: 0;
   }
+
   &:hover {
-    color:#fff
+    color: #fff
   }
 
   & i {
@@ -72,54 +76,7 @@ textarea {
   }
 }
 
-.table-responsive {
-  display: block;
-  width: 49%;
-}
-
-.table {
-  border-collapse: collapse;
-  margin: 5px 0;
-  font-size: 0.9em;
-  width: 100%;
-  border-radius: 5px 5px 0 0;
-  overflow: hidden;
-  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
-
-  & thead tr {
-    background-color: #009879;
-    color: #ffffff;
-    text-align: left;
-    font-weight: bold;
-  }
-
-  & tbody tr {
-    border-bottom: 1px solid #dddddd;
-
-    &.active-row {
-      font-weight: bold;
-      color: #009879;
-    }
-
-    &:nth-of-type(even):not(:last-child) {
-      background-color: #f3f3f3;
-    }
-
-    &:nth-last-child(2) {
-      border-bottom: 2px solid #009879;
-    }
-
-    button {
-      width: 100%;
-    }
-  }
-
-  & th,
-  &td {
-    padding: 12px 15px;
-  }
-}
-.flexTable{
+.flexTable {
   display: flex;
   width: 100%;
 }

@@ -1,4 +1,16 @@
 .table-list-item {
   font-size: 1.25rem;
   line-height: 35px;
+  padding: 0 10px;
+  max-width: 180px;
+  word-wrap: break-word;
+}
+
+td {
+  &:nth-child(2),
+  &:nth-child(3) {
+    .table-list-item {
+      text-align: end;
+    }
+  }
 }

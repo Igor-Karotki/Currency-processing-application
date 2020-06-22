@@ -10,11 +10,12 @@ export default class ItemAddForm extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { name, eur } = this.state;
+    let { name, eur } = this.state;
     if (name && eur) {
-      if (!isNaN(+eur)) {
+      eur = +eur.replace(',', '.');
+      if (!isNaN(eur)) {
         this.setState({ name: '', eur: '' });
-        this.props.onItemAdded(name, +eur);
+        this.props.onItemAdded(name, eur);
       } else {
         alert('Please enter a number');
       }
@@ -50,7 +51,7 @@ export default class ItemAddForm extends Component {
           onChange={this.onEurChange}
           placeholder="eur" />
         <button type="submit"
-          className="btn btnAddForm">Submit</button>
+          className="btn btnAddForm">Add</button>
       </form>
     );
   }

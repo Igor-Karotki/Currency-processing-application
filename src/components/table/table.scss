@@ -2,21 +2,73 @@
   padding: .25rem .75rem;
 }
 
-.sum {
-  div {
-    font-size: 0.9rem;
-  }
-}
-
 .btnDelete {
   border: 2px solid #da6969;
   color: #da6969;
+
   &:hover {
     box-shadow: 0 0 40px 40px #ff3737 inset;
   }
 }
-.table-left{
-  p{
+
+.table-left {
+  p {
     margin: 0;
+  }
+}
+
+
+.table {
+  border-collapse: collapse;
+  margin: 5px 0;
+  font-size: 0.9em;
+  width: 100%;
+  border-radius: 5px 5px 0 0;
+  overflow: hidden;
+  box-shadow: 0 0 20px rgba(0, 0, 0, 0.15);
+
+  & thead tr {
+    background-color: #009879;
+    color: #ffffff;
+    text-align: left;
+    font-weight: bold;
+  }
+
+  & tbody tr {
+    border-bottom: 1px solid #dddddd;
+
+    &.active-row {
+      font-weight: bold;
+      color: #009879;
+    }
+
+    button {
+      width: 100%;
+    }
+  }
+
+  & th,
+  &td {
+    padding: 12px;
+  }
+}
+
+.sum {
+  background-color: #00987933;
+}
+
+.table-left {
+  width: 49%;
+
+  tbody {
+    tr {
+      &:nth-last-child(2) {
+        border-bottom: 2px solid #009879;
+      }
+
+      &:nth-of-type(even):not(:last-child) {
+        background-color: #f3f3f3;
+      }
+    }
   }
 }

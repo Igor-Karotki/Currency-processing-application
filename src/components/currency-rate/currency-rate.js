@@ -15,13 +15,14 @@ export default class CurrencyRate extends Component {
 
   onSubmit = (e) => {
     e.preventDefault();
-    const { currencyRate } = this.state;
+    let { currencyRate } = this.state;
     if (currencyRate) {
-      if (!isNaN(+currencyRate)) {
+      currencyRate = +currencyRate.replace(',', '.');
+      if (!isNaN(currencyRate)) {
         this.props.currencyRate(currencyRate);
-        this.setState({currentCurrencyRate:currencyRate, currencyRate: '' });
+        this.setState({ currentCurrencyRate: currencyRate, currencyRate: '' });
       } else {
-        alert('Please enter a number or replace the comma after the number with a dot(99.99)');
+        alert('Please enter a number');
       }
     } else {
       alert('Please enter Currency Rate');
@@ -37,7 +38,7 @@ export default class CurrencyRate extends Component {
           className="form-control new-table"
           value={this.state.currencyRate}
           onChange={this.onRateChange}
-          placeholder="PLN" />
+          placeholder="1 EUR = ? PLN" />
         <button type="submit"
           className="btn btnCurrency">Сhange</button>
       </form>

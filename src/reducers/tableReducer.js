@@ -20,7 +20,7 @@ export function tableReducer(state = initialState, action) {
       const item = createItem(name, eur);
       return { ...state, items: [...state.items, item] }
     case 'CHANGE_CURRENCYRATE':
-      return { ...state, currencyRate: +action.payload }
+      return { ...state, currencyRate: action.payload }
     default:
       return state
   };
